@@ -1,14 +1,14 @@
 import torch
 import os
 # number of missed frames of all videos (torch.Size([4, 14])) , 4 views and 14 actions
-miss_f = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/Yolo7/missed_frame_05.pt')
+miss_f = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/HrNet/missed_frame_05.pt')
 #Number of missed poses in four views , torch.Size([4, 14, 17]), 4 views, 14 actions and 17 poses
-miss_p = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/Yolo7/missed_posses_05.pt')
+miss_p = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/HrNet/missed_posses_05.pt')
 # Number of total frames in 4 views , torch.Size([4, 14]), 4 views and 14 actions
-frame_t = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/Yolo7/total_frame_num_05.pt')
+frame_t = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/HrNet/total_frame_num_05.pt')
 print(frame_t.shape)
 # Number of unmissed poses, torch.Size([4, 14]), 4 views and 14 actions
-correct_p = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/Yolo7/total_correct_poses_05.pt')
+correct_p = torch.load('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/HrNet/total_correct_poses_05.pt')
 
 import numpy as np
 import torch
@@ -106,7 +106,7 @@ plt.xticks(ind+width,['Bending', 'SittingDown', 'ClosingCan', 'Reaching', 'Walki
             'StairsClimbingDown', 'StandingUp', 'OpeningCan', 'CarryingObject', 'Cleaning', 'PuttingDownObjects',
               'LiftingObject'])
 plt.legend( (bar1_1,bar1, bar2, bar3, bar4), ('Total_Frames','Robot View', 'Back View', 'Front View', 'Omni View') )
-plt.savefig('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/Yolo7/allviews_t.png')
+plt.savefig('/home/reza/PycharmProjects/RHM-HAR-SK-Dataset/HrNet/allviews_t.png')
 plt.show()
 
 
